@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/Copilot_20250617_131307.png">
+    <title>Prestige Maids cleaning Website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+
+     <!-- Page Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="display-4 mb-4 mb-md-0 text-secondary text-uppercase">Book Now</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-sm btn-outline-light" href="index.html">Home</a>
+                        <i class="fas fa-angle-double-right text-light mx-2"></i>
+                        <a class="btn btn-sm btn-outline-light disabled" href="">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fb;
+      color: #222;
+      padding: 30px;
+    }
+
+    .booking-section {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .booking-section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1c1e53;
+    }
+
+    form .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    form textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background-color: #fdbb00;
+      color: #000;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffc300;
+    }
+
+    @media (max-width: 600px) {
+      form .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <section class="booking-section">
+    <h2>Book Our Cleaning Services</h2>
+    <form action="booking.php" method="POST" id="bookingForm">
+      <div class="row">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+      </div>
+      <div class="row">
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <input type="text" name="address" placeholder="Your Address" required />
+      </div>
+      <div class="row">
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option value="Home Cleaning">Home Cleaning</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Post-Constraction Cleaning">Post-Constraction Cleaning</option>
+          <option value="Move-In/Move-Out">Move-In/Move-Out</option>
+          <option value="Carpet Cleaning">Carpet Cleaning</option>
+          <option value="Laundry">Laundry </option>
+        </select>
+        <select name="addons">
+          <option value="">Optional Add-ons</option>
+          <option value="Fragrance">Fragrance</option>
+          <option value="Extra Rooms">Extra Rooms</option>
+          <option value="Toilet Cleaning">Toilet Cleaning</option>
+        </select>
+      </div>
+      <div class="row">
+        <input type="date" name="date" required />
+        <input type="time" name="time" required />
+      </div>
+      <div class="row">
+        <select name="payment" required>
+          <option value="">Payment Method</option>
+          <option value="Mpesa">Mpesa</option>
+          <option value="Cash">Cash</option>
+          <option value="Card">Card</option>
+        </select>
+      </div>
+      <textarea name="notes" placeholder="Additional Notes"></textarea>
+      <button type="submit">Send Booking</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const phone = this.phone.value.trim();
+      const date = this.date.value;
+      const time = this.time.value;
+
+      if (!name || !email || !phone || !date || !time) {
+        alert("Please fill all required fields.");
+        e.preventDefault();
+      }
+    });
+  </script>
+   <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand">
+                   <img src="img/Copilot_20250617_131307.png" alt="Your Logo" class="img-fluid" style="max-height: 150px;">
+                </a>
+                
+                <h5 class="font-weight-semi-bold text-white mb-2">Opening Hours:</h5>
+                <p class="mb-1">Mon – Sat, 8AM – 5PM</p>
+                <p class="mb-0">Sunday: Closed</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-semi-bold text-primary mb-4">Get In Touch</h4>
+                <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>Kibra, Nairobi, KENYA</p>
+                <p><i class="fa fa-phone-alt text-primary mr-2"></i>+254 712 001 755</p>
+                <p><i class="fa fa-envelope text-primary mr-2"></i>swalehsudais08@gmail.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-semi-bold text-primary mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Our Projects</a>
+                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-semi-bold text-primary mb-4">Newsletter</h4>
+                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum.</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-4">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">&copy; <a href="#">Prestige Maids</a>. All Rights Reserved. 
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary px-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
